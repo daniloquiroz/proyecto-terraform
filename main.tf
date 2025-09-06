@@ -1,11 +1,8 @@
 module "nginx_server_qa" {
-  source = "./nginx_server_modules"
-
-  ami_id         = "ami-0c55b159cbfafe1f0" # Amazon Linux 2 AMI (HVM), SSD Volume Type
-  instance_type  = "t2.micro"
-  server_name    = "nginx-server-qa"
-  environment    = "qa"
-  Owner          = "danilo.quiroz"
-  Team           = "DevOps"
-  Project        = "NginxProject"
+  source        = "./modules/nginx_server"
+  instance_type = var.instance_type
+  server_name   = var.server_name
+  environment   = var.environment
+  region        = var.region
+  ssh_public_key = var.ssh_public_key  # si tu módulo lo espera (recomendado)
 }

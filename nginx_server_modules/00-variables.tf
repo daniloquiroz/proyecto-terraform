@@ -40,3 +40,8 @@ variable "Project" {
   default     = "Prueba"
 
 }
+variable "CostCenter" {
+  description = "Centro de costo asociado al recurso"
+  type        = string
+  default     = "Alma"
+}
